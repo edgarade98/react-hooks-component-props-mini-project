@@ -1,14 +1,15 @@
 import React from 'react';
-import logo from '../assets/logo';
 
-export default function About({ imageSrc = logo , about })
-{
-    return (
-        <aside>
-            <img src={imageSrc} alt='blog logo' />
-            <p>
-                {about}
-            </p>
-        </aside>
-    )
+function About(props) {
+
+  const imageUrl = props.image || "https://via.placeholder.com/215";
+
+  return (
+    <aside>
+      <img src={imageUrl} alt="blog logo" />
+      <p>{props.about}</p>
+    </aside>
+  );
 }
+
+export default About;
